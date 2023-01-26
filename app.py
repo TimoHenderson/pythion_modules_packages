@@ -1,8 +1,13 @@
 # import task_list
 from modules.task_list import *
 from modules.output import *
-from data.task_list import tasks
 from modules.input import get_option, get_task_description, get_task_duration
+
+load_data = input("Would you like to load the saved tasks? (y/n) ")
+if load_data == "y":
+    from data.task_list import tasks
+else:
+    tasks = []
 
 while True:
     print_menu()
