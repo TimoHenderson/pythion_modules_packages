@@ -19,17 +19,28 @@ def get_uncompleted_tasks(list):
 
 ## Get a list of completed tasks
 def get_completed_tasks(list):
-    pass
+    completed_tasks = []
+    for task in list:
+        if task["completed"]:
+            completed_tasks.append(task)
+    return completed_tasks
 
 
 ## Get tasks where time_taken is at least a given time
 def get_tasks_taking_at_least(list, time):
-    pass
+    tasks_over_duration = []
+    for task in list:
+        if task["time_taken"] >= time:
+            tasks_over_duration.append(task)
+    return tasks_over_duration
 
 
 ## Find a task with a given description
 def get_task_with_description(list, description):
-    pass
+    for task in list:
+        if task["description"] == description:
+            return task
+    return None
 
 
 # Extention (Function):
